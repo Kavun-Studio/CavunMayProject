@@ -11,9 +11,9 @@ public class ClosestZondbe : WlalkPlayer
         WlalkPlayer isMouseDown = GetComponent<WlalkPlayer>();
 
         //coins = GetComponent<WlalkPlayer>();
-        if (Input.GetMouseButtonDown(0) && isMouseDown == true) 
+        if (Input.GetMouseButtonDown(0) && isMouseDown == true)
         {
-            GameObject closestEnemy = FindClosestEnemy(); 
+            GameObject closestEnemy = FindClosestEnemy();
 
             if (closestEnemy != null)
             {

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,7 +29,8 @@ public class Buttons : MonoBehaviour
         {
             AudioListener.volume = 1f;
             Volume = true;
-        }else if (Volume)
+        }
+        else if (Volume)
         {
             AudioListener.volume = 0f;
             Volume = false;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -22,11 +20,11 @@ public class EnemyManager : MonoBehaviour
     {
         int enemyInScene = GameObject.FindGameObjectsWithTag("Enemy").Length;
         // If the player has no health left...
-        if (playerHealth.currentHealth <= 0f || enemyInScene >= spawnMax )
+        if (playerHealth.currentHealth <= 0f || enemyInScene >= spawnMax)
         {
             // ... exit the function.
             return;
-        }      
+        }
         // Find a random index between zero and one less than the number of spawn points.
         int spawnPointIndex = Random.Range(0, spawnPoints.Length);
         int enemyIndex = Random.Range(0, enemy.Length);
@@ -36,5 +34,5 @@ public class EnemyManager : MonoBehaviour
         Instantiate(enemy[enemyIndex], spawnPoints[spawnPointIndex].position, spawnPoints[spawnPointIndex].rotation);
     }
 
-    
+
 }

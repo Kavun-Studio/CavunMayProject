@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class DieMenu : MonoBehaviour
 {
-public void ExitButton()
+    public void ExitButton()
     {
         SceneManager.LoadScene("MenuScene");
     }
@@ -11,5 +11,5 @@ public void ExitButton()
     {
         SceneManager.LoadScene(1);
     }
-  
+
 }

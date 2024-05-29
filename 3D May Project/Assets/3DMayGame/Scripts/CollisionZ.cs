@@ -10,13 +10,13 @@ public class CollisionZ : PlayerHealth
 
     public void Start()
     {
-        health = GetComponent<PlayerHealth> ();
-        _animator = GetComponent<Animator> ();
+        health = GetComponent<PlayerHealth>();
+        _animator = GetComponent<Animator>();
 
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
 
             Damage();
@@ -34,12 +34,12 @@ public class CollisionZ : PlayerHealth
 
     public void Update()
     {
-        if(health.currentHealth <= 0)
+        if (health.currentHealth <= 0)
         {
             _animator.SetBool("Death", true);
             Invoke(nameof(DestroyPlayer), 3f);
-            
-        }      
+
+        }
     }
     private void DestroyPlayer()
     {
@@ -49,5 +49,5 @@ public class CollisionZ : PlayerHealth
     private void Damage()
     {
         health.currentHealth -= zombieDamage;
-    }  
+    }
 }
