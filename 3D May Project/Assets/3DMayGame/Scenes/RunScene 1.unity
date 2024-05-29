@@ -2546,6 +2546,10 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1904899213}
+    - target: {fileID: 2687792199014943335, guid: b3c165a4d75d4064e9e80dce0a723eb3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3480178446031671106, guid: b3c165a4d75d4064e9e80dce0a723eb3, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
@@ -2574,6 +2578,10 @@ PrefabInstance:
       propertyPath: ammoText
       value: 
       objectReference: {fileID: 1904899213}
+    - target: {fileID: 7345413699275653436, guid: b3c165a4d75d4064e9e80dce0a723eb3, type: 3}
+      propertyPath: isMouseDown
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8614378408575210371, guid: b3c165a4d75d4064e9e80dce0a723eb3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.7317157
