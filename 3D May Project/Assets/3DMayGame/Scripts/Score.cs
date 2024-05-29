@@ -22,12 +22,17 @@ public class Score : PlayerHealth
 
     private void Update()
     {
-        if (player != null)
+        if (player != null) 
+        {
             scoreText.text = ((int)(player.position.z)).ToString();
-        distante = ((int)(player.position.z));
-        if (distante == 50)
+            distante = ((int)(player.position.z));
+        }
+
+        if (distante == 50) 
+        {
         money.text = (distante / 50).ToString();
-        distante -= 50;
+        distante -= 50; 
+        }
 
         if (health.currentHealth <= 0)
         {

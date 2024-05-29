@@ -9,6 +9,8 @@ namespace DefaultNameSpace
     {
         [SerializeField] private float speed = 2.5f;
         [SerializeField] private int coins;
+        [SerializeField] private PlayerHealth health;
+        public bool isMouseDown = true;
         public Text ammoText;
         private Animator _animator;
 
@@ -54,8 +56,15 @@ namespace DefaultNameSpace
             _animator.SetBool("isWalk", verticalInput < 0f);
 
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(0) && isMouseDown == true && health.currentHealth >= 0)
             {
+                coins -= 1;
+                ammoText.text = coins.ToString();
+                if (coins <= 0 && health.currentHealth >= 0)
+                {
+                    isMouseDown = false;
+                    //return;
+                }
                 _animator.SetBool("gun", true);
             }
             else _animator.SetBool("gun", false);

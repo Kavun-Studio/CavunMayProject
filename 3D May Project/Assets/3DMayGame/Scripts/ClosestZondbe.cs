@@ -1,6 +1,5 @@
 using DefaultNameSpace;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ClosestZondbe : WlalkPlayer
 {
@@ -9,8 +8,10 @@ public class ClosestZondbe : WlalkPlayer
 
     private void Update()
     {
+        WlalkPlayer isMouseDown = GetComponent<WlalkPlayer>();
+
         //coins = GetComponent<WlalkPlayer>();
-        if (Input.GetMouseButtonDown(0)) 
+        if (Input.GetMouseButtonDown(0) && isMouseDown == true) 
         {
             GameObject closestEnemy = FindClosestEnemy(); 
 
