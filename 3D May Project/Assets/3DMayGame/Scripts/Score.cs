@@ -1,3 +1,4 @@
+using DefaultNameSpace;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +27,7 @@ public class Score : PlayerHealth
         {
             scoreText.text = ((int)(player.position.z)).ToString();
             distante = ((int)(player.position.z));
+            money.text = distante.ToString();
         }
 
         if (health.currentHealth <= 0)

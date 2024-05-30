@@ -8,7 +8,7 @@ namespace DefaultNameSpace
     public class WlalkPlayer : MonoBehaviour
     {
         [SerializeField] private float speed = 2.5f;
-        public int coins;
+        static public int coins;
         [SerializeField] private PlayerHealth health;
         public bool isMouseDown;
         public Text ammoText;
@@ -24,7 +24,7 @@ namespace DefaultNameSpace
         {
             if (other.gameObject.tag == "Coin")
             {
-                coins += 10;
+                coins += 5;
                 ammoText.text = coins.ToString();
                 Destroy(other.gameObject);
             }          
@@ -72,7 +72,6 @@ namespace DefaultNameSpace
             if (coins > 0 && Input.GetMouseButtonDown(0))
             {
                 GameObject closestEnemy = FindClosestEnemy();
-
                 if (closestEnemy != null)
                 {
                     Destroy(closestEnemy);
