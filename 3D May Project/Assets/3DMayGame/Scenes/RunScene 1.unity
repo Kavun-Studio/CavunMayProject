@@ -2228,7 +2228,7 @@ MonoBehaviour:
   score: {fileID: 381123947}
   distante: 0
   moneyMenu: {fileID: 2091337779}
-  health: {fileID: 0}
+  health: {fileID: 506081600}
 --- !u!1 &1386488074 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8991360966127765817, guid: b3c165a4d75d4064e9e80dce0a723eb3, type: 3}
@@ -3284,6 +3284,10 @@ PrefabInstance:
     - target: {fileID: 6744054042607562497, guid: b3c165a4d75d4064e9e80dce0a723eb3, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6888667729272746272, guid: b3c165a4d75d4064e9e80dce0a723eb3, type: 3}
+      propertyPath: spawnTime
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6888667729272746272, guid: b3c165a4d75d4064e9e80dce0a723eb3, type: 3}
       propertyPath: playerHealth
