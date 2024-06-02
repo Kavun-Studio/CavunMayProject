@@ -6,59 +6,59 @@ public class Store : MonoBehaviour
     [SerializeField] Text moneyText;
     public int money;
     [SerializeField] GameObject LockSystem1;
-    [SerializeField] GameObject Buy1;
     [SerializeField] GameObject Use1;
     [SerializeField] GameObject LockSystem2;
-    [SerializeField] GameObject Buy2;
     [SerializeField] GameObject Use2;
     [SerializeField] GameObject LockSystem3;
-    [SerializeField] GameObject Buy3;
     [SerializeField] GameObject Use3;
     [SerializeField] GameObject LockSystem4;
-    [SerializeField] GameObject Buy4;
     [SerializeField] GameObject Use4;
     [SerializeField] GameObject LockSystem5;
-    [SerializeField] GameObject Buy5;
     [SerializeField] GameObject Use5;
-    public static bool buy1;
-    public static bool buy2;
-    public static bool buy3;
-    public static bool buy4;
-    public static bool buy5;
+    public int buy1, buy2, buy3, buy4, buy5;
 
-    private const string saveKey = "mainSave";
 
     private void Start()
     {
         Score.moneyformenu += money;
-        if (buy1 == true)
+        if (PlayerPrefs.HasKey("1"))
+            buy1 = PlayerPrefs.GetInt("1");
+
+        if (PlayerPrefs.HasKey("2"))
+            buy1 = PlayerPrefs.GetInt("2");
+
+        if (PlayerPrefs.HasKey("3"))
+            buy1 = PlayerPrefs.GetInt("3");
+
+        if (PlayerPrefs.HasKey("4"))
+            buy1 = PlayerPrefs.GetInt("4");
+
+        if (PlayerPrefs.HasKey("5"))
+            buy1 = PlayerPrefs.GetInt("5");
+
+        if (buy1 == 1)
         {
             LockSystem1.SetActive(false);
-            Buy1.SetActive(false);
             Use1.SetActive(true);
         }
-        if (buy2 == true)
+        if (buy2 == 1)
         {
             LockSystem2.SetActive(false);
-            Buy2.SetActive(false);
             Use2.SetActive(true);
         }
-        if (buy3 == true)
+        if (buy3 == 1)
         {
             LockSystem3.SetActive(false);
-            Buy3.SetActive(false);
             Use3.SetActive(true);
         }
-        if (buy4 == true)
+        if (buy4 == 1)
         {
             LockSystem4.SetActive(false);
-            Buy4.SetActive(false);
             Use4.SetActive(true);
         }
-        if (buy5 == true)
+        if (buy5 == 1)
         {
             LockSystem5.SetActive(false);
-            Buy5.SetActive(false);
             Use5.SetActive(true);
         }
     }
@@ -74,9 +74,10 @@ public class Store : MonoBehaviour
     {
         if (money >= 200)
         {
-            buy1 = true;
+            buy1 = 1;
+            PlayerPrefs.SetInt("1", buy1);
+            PlayerPrefs.Save();
             LockSystem1.SetActive(false);
-            Buy1.SetActive(false);
             Use1.SetActive(true);
             money -= 200;
         }
@@ -87,9 +88,10 @@ public class Store : MonoBehaviour
     {
         if (money >= 500)
         {
-            buy2 = true;
+            buy2 = 1;
+            PlayerPrefs.SetInt("2", buy2);
+            PlayerPrefs.Save();
             LockSystem2.SetActive(false);
-            Buy2.SetActive(false);
             Use2.SetActive(true);
             money -= 500;
         }
@@ -100,9 +102,10 @@ public class Store : MonoBehaviour
     {
         if (money >= 800)
         {
-            buy3 = true;
+            buy3 = 1;
+            PlayerPrefs.SetInt("3", buy3);
+            PlayerPrefs.Save();
             LockSystem3.SetActive(false);
-            Buy3.SetActive(false);
             Use3.SetActive(true);
             money -= 800;
         }
@@ -113,9 +116,10 @@ public class Store : MonoBehaviour
     {
         if (money >= 1000)
         {
-            buy4 = true;
+            buy4 = 1;
+            PlayerPrefs.SetInt("4", buy4);
+            PlayerPrefs.Save();
             LockSystem4.SetActive(false);
-            Buy4.SetActive(false);
             Use4.SetActive(true);
             money -= 1000;
         }
@@ -126,9 +130,10 @@ public class Store : MonoBehaviour
     {
         if (money >= 1500)
         {
-            buy5 = true;
+            buy5 = 1;
+            PlayerPrefs.SetInt("5", buy5);
+            PlayerPrefs.Save();
             LockSystem5.SetActive(false);
-            Buy5.SetActive(false);
             Use5.SetActive(true);
             money -= 1500;
         }
