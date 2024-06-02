@@ -57,7 +57,7 @@ Transform:
   m_GameObject: {fileID: 390087852413711122}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.016012669, y: -0.09481335, z: -0.22945571}
+  m_LocalPosition: {x: 0.016012669, y: -0.09481335, z: 0.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -302,9 +302,6 @@ PrefabInstance:
       addedObject: {fileID: 1294649048211502738}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2687792199014943335}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 81bb9eea30387e442899949a80011e55, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1811525137046451219}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 81bb9eea30387e442899949a80011e55, type: 3}
       insertIndex: -1
@@ -350,22 +347,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2687792199014943335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8991360966127765817}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f534b88ef6db43499c466cc8d027dc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 2.5
-  coins: 0
-  ammoText: {fileID: 0}
-  enemyTag: Enemy
 --- !u!114 &1811525137046451219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -393,7 +374,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2.5
   coins: 0
+  health: {fileID: 0}
+  isMouseDown: 0
   ammoText: {fileID: 0}
+  _animatorZondbe: {fileID: 0}
+  enemyTag: Enemy
 --- !u!136 &440607573243272764
 CapsuleCollider:
   m_ObjectHideFlags: 0

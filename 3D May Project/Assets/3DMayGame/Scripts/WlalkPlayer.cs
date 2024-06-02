@@ -8,11 +8,13 @@ namespace DefaultNameSpace
     public class WlalkPlayer : MonoBehaviour
     {
         [SerializeField] private float speed = 2.5f;
-        [SerializeField] private int coins;
+        static public int coins;
         [SerializeField] private PlayerHealth health;
-        public bool isMouseDown = true;
+        public bool isMouseDown;
         public Text ammoText;
         private Animator _animator;
+        public string enemyTag = "Enemy";
+
 
         private void Start()
         {
@@ -22,7 +24,7 @@ namespace DefaultNameSpace
         {
             if (other.gameObject.tag == "Coin")
             {
-                coins += 10;
+                coins += 5;
                 ammoText.text = coins.ToString();
                 Destroy(other.gameObject);
             }          
@@ -56,21 +58,50 @@ namespace DefaultNameSpace
             _animator.SetBool("isWalk", verticalInput < 0f);
 
 
-            if (Input.GetMouseButtonDown(0) && isMouseDown == true && health.currentHealth >= 0)
+            if (coins > 0 && Input.GetMouseButtonDown(0))
             {
-                coins -= 1;
-                ammoText.text = coins.ToString();
-                if (coins <= 0 && health.currentHealth >= 0)
-                {
-                    isMouseDown = false;
-                    //return;
-                }
                 _animator.SetBool("gun", true);
+                coins -= 1;
+                ammoText.text = coins.ToString();              
+                
             }
             else _animator.SetBool("gun", false);
-        }
 
+
+
+            if (coins > 0 && Input.GetMouseButtonDown(0))
+            {
+                GameObject closestEnemy = FindClosestEnemy();
+                if (closestEnemy != null)
+                {
+                    Destroy(closestEnemy);
+                }
+
+                GameObject FindClosestEnemy()
+                {
+                    GameObject[] enemies = GameObject.FindGameObjectsWithTag(enemyTag); // Находим всех врагов с тегом "enemy"
+
+                    GameObject closestEnemy = null;
+                    float closestDistance = Mathf.Infinity;
+                    Vector3 position = transform.position;
+
+                    foreach (GameObject enemy in enemies)
+                    {
+                        float distance = Vector3.Distance(position, enemy.transform.position);
+
+                        if (distance < closestDistance)
+                        {
+                            closestEnemy = enemy;
+                            closestDistance = distance;
+                        }
+                    }
+
+                    return closestEnemy;
+                }
+            }
+        }
+            
     }
 
-
 }
+

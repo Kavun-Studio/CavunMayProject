@@ -1,6 +1,7 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Z_Follow : MonoBehaviour
+public class Z_Follow : Souds
 {
     [SerializeField] private float speed = 5f;
     [SerializeField] private Transform player;
@@ -17,14 +18,21 @@ public class Z_Follow : MonoBehaviour
         if (player != null)
             transform.position = Vector3.MoveTowards(transform.position, player.position, speed);
         else 
-        enemy.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;          
+        enemy.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezePositionY;
+        
+        if(gameObject == null)
+        {
+            PlaySound(4, destroyed: true);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "TriggerAttak")
         {
+            PlaySound(0, p1: 0.5f, p2: 2f);
             _animator.SetTrigger("Attak");
         }
     }
+    
 }
 
