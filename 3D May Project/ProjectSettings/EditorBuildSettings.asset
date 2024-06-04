@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/3DMayGame/Scenes/MenuSceneDesktop.unity
+    guid: 6299a56cac694324e9df83d024e3e4b0
+  - enabled: 1
     path: Assets/3DMayGame/Scenes/RunScene 1.unity
     guid: 152864842e4f10e47ac0e100f118cfbc
-  - enabled: 1
+  - enabled: 0
     path: Assets/3DMayGame/Scenes/MenuScene.unity
     guid: 13065575c4a8d514880a946429bd6e9a
   m_configObjects: {}

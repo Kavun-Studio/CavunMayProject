@@ -1,5 +1,3 @@
-using DefaultNameSpace;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,17 +26,16 @@ public class Score : PlayerHealth
         {
             scoreText.text = ((int)(player.position.z)).ToString();
             distante = ((int)(player.position.z));
-            money.text = distante.ToString();
         }
         else diemenu.SetActive(true);
+        moneyformenu = distante / 2;
+        money.text = (distante / 2).ToString();
+        scoreTextfordiemenu.text = distante.ToString();
 
         if (health.currentHealth <= 0)
         {
-
             ammunation.SetActive(false);
             score.SetActive(false);
-            scoreTextfordiemenu.text = scoreText.text;
-            moneyformenu = distante;
 
         }
     }

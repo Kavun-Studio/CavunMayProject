@@ -5,7 +5,7 @@ public class DieMenu : MonoBehaviour
 {
     public void ExitButton()
     {
-        SceneManager.LoadScene("MenuScene");
+        SceneManager.LoadScene(0);
     }
     public void ReplayButton()
     {

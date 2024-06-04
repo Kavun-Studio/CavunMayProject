@@ -20,7 +20,18 @@ public class Store : MonoBehaviour
 
     private void Start()
     {
-        Score.moneyformenu += money;
+        money += Score.moneyformenu;
+        moneyText.text = money.ToString();
+
+        if (PlayerPrefs.HasKey("money"))
+        {
+        money = PlayerPrefs.GetInt("money");
+        }
+
+        PlayerPrefs.GetString("money", moneyText.text);
+        PlayerPrefs.Save();
+
+
         if (PlayerPrefs.HasKey("1"))
             buy1 = PlayerPrefs.GetInt("1");
 
@@ -62,11 +73,7 @@ public class Store : MonoBehaviour
             Use5.SetActive(true);
         }
     }
-
-    public void Update()
-    {
-        moneyText.text = money.ToString();
-    }
+  
 
 
 
